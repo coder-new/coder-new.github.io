@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="zookeeper," />
 
 
 
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="摘要">
-<meta name="keywords" content="test">
+<meta name="description" content="zookeeper集群安装  3节点">
+<meta name="keywords" content="zookeeper">
 <meta property="og:type" content="article">
-<meta property="og:title" content="my new post">
-<meta property="og:url" content="http://yoursite.com/2017/10/24/my-new-post/index.html">
+<meta property="og:title" content="zookeeper安装">
+<meta property="og:url" content="http://yoursite.com/2017/10/25/zookeeper安装/index.html">
 <meta property="og:site_name" content="coder-new">
-<meta property="og:description" content="摘要">
-<meta property="og:updated_time" content="2017-10-24T15:31:55.932Z">
+<meta property="og:description" content="zookeeper集群安装  3节点">
+<meta property="og:updated_time" content="2017-10-25T15:49:42.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="my new post">
-<meta name="twitter:description" content="摘要">
+<meta name="twitter:title" content="zookeeper安装">
+<meta name="twitter:description" content="zookeeper集群安装  3节点">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/24/my-new-post/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/25/zookeeper安装/"/>
 
 
 
 
 
-  <title>my new post | coder-new</title>
+  <title>zookeeper安装 | coder-new</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/24/my-new-post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/zookeeper安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhong zhao">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">my new post</h1>
+          <h1 class="post-title" itemprop="name headline">zookeeper安装</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-24T23:22:37+08:00">
-                2017-10-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T23:32:45+08:00">
+                2017-10-25
               </time>
             
 
@@ -299,7 +299,15 @@
       
 
       
-        <p>摘要<br><a id="more"></a><br>正文</p>
+        <p>zookeeper集群安装  3节点<br><a id="more"></a><br>zookeeper的安装还是比较简单的，主要分为以下几个步骤：</p>
+<ul>
+<li>首先需要在各个节点安装好jdk，配置好环境变量</li>
+<li>将zookeeper下conf目录中的zoo_simple.cfg文件名修改为zoo.cfg文件名修改为zoo.cfg<br>  mv zoo_sample.cfg zoo.cfg</li>
+<li>编辑zoo.cfg，添加以下：<br>  dataDir=${ZOOKEERPER_HOME}/data<br>  dataLogDir=${ZOOKEERPER_HOME}/logs<br>  server.1=master:2888:3888<br>  server.2=slave01:2888:3888<br>  server.3=slave02:2888:3888</li>
+<li>在data目录添加myid文件，文件中写上当前节点对于的编号，这个编号和上一步中server后面的数字对应</li>
+<li>在bin目录下执行./zkServer.sh start，注意要一个一个节点的执行，最好间隔几秒</li>
+<li>在bin目录下执行./zkServer.sh status</li>
+</ul>
 
       
     </div>
@@ -317,7 +325,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag"># test</a>
+            <a href="/tags/zookeeper/" rel="tag"># zookeeper</a>
           
         </div>
       
@@ -330,8 +338,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/24/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/10/25/Ubuntu-command/" rel="next" title="Ubuntu command">
+                <i class="fa fa-chevron-left"></i> Ubuntu command
               </a>
             
           </div>
@@ -339,10 +347,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/25/Ubuntu-command/" rel="prev" title="Ubuntu command">
-                Ubuntu command <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
